@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA OLIVA | Aceite de Oliva Virgen Extra Premium</title>
+    <meta name="description" content="Aceite de oliva virgen extra premium de Jaén. Presentación de productos gourmet sostenibles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="canonical">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  connect-src 'self';
+  media-src 'self';
+  object-src 'none';
+  frame-ancestors 'none'; 
+  base-uri 'self';
+  form-action 'self';">
+
+
+</head>
+<body class="index">
+  <div class="aviso-tfc">
+  ⚠️ Esta página es un **trabajo fin de curso**. No es un sitio web real.
+</div>
+<header>
+  <div class="logodiv">
+    <a href="/aura-oliva/"><img class="logo" src="assets/imagenes/logo.png" alt="Aura Oliva"></a>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="/aura-oliva/" class="active">Inicio</a></li>
+      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">☰</button>
+  </nav>
+</header>
+
+</body>
+<main>
+
+<section class="hero" data-animate>
+  <div class="hero-text">
+    <h1>Aceite de Oliva Virgen Extra Premium</h1>
+    <p>
+      Uno de los factores que más influyen en la calidad de un AOVE es la variedad de aceituna utilizada. En AURA OLIVA trabajamos con las mejores variedades de Jaén, reconocidas mundialmente por su excelencia.
+    </p>
+    <p>
+      Nuestro aceite de oliva virgen extra se caracteriza por su sabor intenso, afrutado y equilibrado, ideal para los paladares más exigentes. Cada botella es el resultado de una cuidadosa selección de aceitunas en su punto óptimo de maduración.
+    </p>
+    <a href="servicios.html" class="btn">Ver productos</a>
+  </div>
+  <img src="assets/imagenes/olivar1.webp" alt="Olivar Andaluz" class="hero-img">
+</section>
+
+<section class="container products" data-animate>
+  <h2>Nuestros Productos</h2>
+  <p class="subtitle">Selección exclusiva de aceites de oliva virgen extra</p>
+
+  <div class="grid">
+    <article class="card">
+      <img src="assets/imagenes/500ml.webp" class="img-horizontal" alt="Premium 500ml">
+      <div class="card-content">
+        <h3>Premium 500ml</h3>
+        <p>Recolección temprana, sabor intenso y afrutado con notas de hierba fresca y almendra verde.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="assets/imagenes/arbequina-21.jpg" class="img-horizontal" alt="Gourmet Edición">
+      <div class="card-content">
+        <h3>Gourmet Edición</h3>
+        <p>Ideal para maridaje y regalos. Selección especial arbequina de sabor suave y delicado.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="assets/imagenes/garrafa2l.jpg" class="img-horizontal" alt="Aura Oliva Ecologico">
+      <div class="card-content">
+        <h3>Aura Oliva Ecológico</h3>
+        <p>Certificado ecológico con producción sostenible. Sabor equilibrado y natural. Cultivado sin pesticidas para quienes buscan lo más puro.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="container about" data-animate>
+  <h2>De Jaén para el mundo</h2>
+  <p>El aceite de Jaén I.G.P. es un producto reconocido internacionalmente por su calidad superior. AURA OLIVA nace en el corazón de Andalucía, donde la tradición olivarera se remonta a siglos de historia.</p>
+  <p>Nuestro compromiso es llevar la excelencia del aceite de oliva virgen extra de Jaén a todas las mesas del mundo, manteniendo los más altos estándares de calidad y sostenibilidad en cada paso del proceso.</p>
+  <p>Cultivamos nuestros olivares con respeto al medio ambiente, aplicando técnicas de agricultura sostenible que preservan el ecosistema y garantizan un producto natural y auténtico.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 AURA OLIVA. Todos los derechos reservados.</p>
+  <div>
+    <a href="aviso-legal.html">Aviso Legal</a> |
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+  </div>
+</footer>
+
+<script>
+// Menú hamburguesa
+const hamburger = document.getElementById('hamburger');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+
+// Cerrar menú al hacer clic fuera
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
+
+// Animaciones al scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('[data-animate]').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
+
+
+
+

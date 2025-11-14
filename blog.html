@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Blog | AURA OLIVA</title>
+<link rel="stylesheet" href="assets/css/estilos.css">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  connect-src 'self';
+  media-src 'self';
+  object-src 'none';
+  frame-ancestors 'none'; 
+  base-uri 'self';
+  form-action 'self';
+">
+
+<link rel="canonical">
+</head>
+
+<body>
+   <div class="aviso-tfc">
+  ⚠️ Esta página es un **trabajo fin de curso**. No es un sitio web real.
+</div>
+<header>
+  <div class="logodiv">
+    <a href="/aura-oliva/"><img class="logo" src="assets/imagenes/logo.png" alt="Aura Oliva"></a>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="/aura-oliva/">Inicio</a></li>
+      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contacto.html" class="">Contacto</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">☰</button>
+  </nav>
+</header>
+
+<!-- Sección de inicio del blog con línea dorada y texto centrado -->
+<section class="hero-simple" data-animate>
+    <h1>Blog Gourmet</h1>
+    <p>Noticias, cultura oleícola, maridajes y experiencias exclusivas.</p>
+</section>
+
+<div class="container" data-animate>
+    <div class="grid">
+        <!-- Aquí van tus artículos -->
+    </div>
+</div>
+
+
+<div class="grid">
+
+<article class="blog-item">
+  <img src="assets/imagenes/almazara-bonita.jpg" alt="Beneficios del Aceite de Oliva">
+  <a href="opinion3.html" style="display: block; text-decoration: none; color: inherit;">
+    <div class="blog-content">
+      <h3>Beneficios del Aceite de Oliva</h3>
+      <p>Descubre qué diferencia a los aceites de oliva virgen extra de cosecha temprana y por qué son los más valorados.</p>
+    </div>
+  </a>
+</article>
+<article class="blog-item">
+  <img src="assets/imagenes/cata en Baeza.jpg" alt="Degustacion Premium en Baeza">
+  <a href="opinion2.html" style="display: block; text-decoration: none; color: inherit;">
+    <div class="blog-content">
+      <h3>Degustación Premium en Baeza</h3>
+      <p>La degustación premium en Baeza reúne a amantes del aceite de oliva virgen extra.</p>    </div>
+  </a>
+</article>
+</a>
+<article class="blog-item">
+<img src="assets/imagenes/almazara-bonita.jpg" alt="Beneficios del Aceite de Oliva" >
+<a href="opinion3.html" style="display: block; text-decoration: none; color: inherit;">
+    <div class="blog-content">
+      <h3>Beneficios del aceite de oliva</h3>
+      <p>Protección cardiovascular, control de colesterol y polifenoles con poder
+        antioxidante. El oro líquido de la Dieta Mediterránea.</p>
+  </a>
+</article>
+</a>
+<article>
+<img src="assets/imagenes/cata.jpeg" alt="Catas Privadas para grupos" class="img-horizontal">
+<h3>Catas privadas para grupos</h3>
+<p>Organizamos experiencias sensoriales para empresas, eventos familiares
+y turismo gastronómico. ¿Te apuntas?</p>
+</article>
+
+<article>
+<img src="assets/imagenes/maridaje.jpg" alt="Maridaje" class="img-horizontal">
+<h3>Maridajes gourmet con AOVE</h3>
+<p>Carpaccios, pastas, pescados blancos o incluso postres cítricos.
+El aceite es el nuevo protagonista de la alta cocina.</p>
+</article>
+
+<article>
+<img src="assets/imagenes/botellas.jpg" alt="botellas" class="img-horizontal">
+<h3>Packaging sostenible</h3>
+<p>Apostamos por vidrio reciclable y diseños elegantes.
+El respeto por la tierra también está en el envase.</p>
+</article>
+
+</div></div>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios" data-animate>
+<h2>Opiniones de clientes satisfechos</h2>
+<p>La calidad se nota desde la primera gota.</p>
+
+<div class="cards">
+  <div class="card">
+    <p>"Aroma fresco e intenso. Sin duda el mejor aceite que he probado."</p>
+    <span>- Marta, Sevilla</span>
+  </div>
+
+  <div class="card">
+    <p>"Lo usamos en nuestro restaurante y los clientes siempre preguntan."</p>
+    <span>- Álvaro, Chef Michelin</span>
+  </div>
+
+  <div class="card">
+    <p>"Atención exquisita y entrega rápida. El pack</p>
+    <span>María Cabezas, Especialista gastronómica</span>
+    </div>
+  </div>
+</section>
+  
+  
+  <footer>
+  <p>&copy; 2025 AURA OLIVA. Todos los derechos reservados.</p>
+  <div>
+    <a href="aviso-legal.html">Aviso Legal</a> |
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+
+// Animaciones scroll
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{
+  threshold:0.1,
+  rootMargin:"0px 0px -100px 0px"
+});
+
+document.querySelectorAll('[data-animate]').forEach(el=>{
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>

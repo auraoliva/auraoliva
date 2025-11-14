@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes somos | AURA OLIVA</title>
+    <meta name="description" content="AURA OLIVA: tradición olivarera, innovación gourmet y excelencia en AOVE. Conoce a sus fundadores en Aldeaquemada, Jaén.">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  connect-src 'self';
+  media-src 'self';
+  object-src 'none';
+  frame-ancestors 'none'; 
+  base-uri 'self';
+  form-action 'self';
+">
+
+    <link rel="canonical">
+
+    <!-- Estilos solo para ESTA página -->
+    <style>
+      /* Imágenes pequeñas y completas */
+      .founders img {
+        width: 160px;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto 15px auto;
+        object-fit: contain;
+      }
+
+      /* Ajuste para separación del botón */
+      .cta p {
+        margin-bottom: 25px;
+      }
+
+      .cta {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        padding: 40px 20px;
+        border-radius: 12px;
+      }
+    </style>
+</head>
+
+<body>
+ <div class="aviso-tfc">
+  ⚠️ Esta página es un **trabajo fin de curso**. No es un sitio web real.
+</div>
+<header>
+  <div class="logodiv">
+    <a href="/aura-oliva/"><img class="logo" src="assets/imagenes/logo.png" alt="Aura Oliva"></a>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="/aura-oliva/">Inicio</a></li>
+      <li><a href="quienes-somos.html" class="active">Quiénes Somos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">☰</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-simple" data-animate>
+    <h1>Quiénes Somos</h1>
+    <p>Pasión, tradición y un estilo gourmet incomparable.</p>
+</section>
+
+<!-- PRESENTACIÓN -->
+<section class="container about" data-animate>
+  <h2>Raíces en Aldeaquemada, Jaén</h2>
+  <p>
+    AURA OLIVA nace en Aldeaquemada, un enclave único en la comarca de Sierra Morena donde la altitud,
+    los suelos arcillosos y la brisa serrana aportan personalidad a cada aceituna. Este entorno privilegiado
+    nos permite extraer aceites con un perfil sensorial fresco, herbáceo y sorprendentemente elegante.
+  </p>
+</section>
+
+<!-- BIOGRAFÍAS -->
+<section class="container founders" data-animate>
+  <div class="grid">
+    <article class="card">
+      <img src="assets/imagenes/andres.jpg" alt="Fundador Andrés">
+      <h3>Andrés Güiza Alcaide</h3>
+      <p>
+        Maestro de almazara y agricultor de nacimiento. Andrés Güiza, ha dedicado más de 20 años al estudio
+        de las variedades picual y arbequina, apostando desde muy temprano por la cosecha joven
+        y los métodos de extracción en frío. Especialista en cata profesional y maridaje de aceite. Su visión gastronómica ha posicionado
+        a AURA OLIVA como un referente gourmet en la alta restauración.
+      </p>
+    </article>
+
+    <article class="card">
+      <img src="assets/imagenes/rosa.jpg" alt="Marketing">
+      <h3>Rosa González-Magdaleno</h3>
+      <p>
+       Experta en Marketing, ventas y RRSS. Ha conseguido dar una nueva perspectiva del mundo del aceite de oliva virgen extra y acercarlo a todas las edades, sin dejar de lado la tradición y la exclusividad.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" data-animate>
+  <p>Descubre cómo cuidamos cada detalle desde el olivar hasta la botella.</p>
+  <a href="contacto.html" class="btn-ver">Reservar visita</a>
+</section>
+
+<footer>
+  <p>&copy; 2025 AURA OLIVA. Todos los derechos reservados.</p>
+  <div>
+    <a href="aviso-legal.html">Aviso Legal</a> |
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+
+// Animaciones scroll
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{
+  threshold:0.1,
+  rootMargin:"0px 0px -100px 0px"
+});
+
+document.querySelectorAll('[data-animate]').forEach(el=>{
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
+
+
+
+

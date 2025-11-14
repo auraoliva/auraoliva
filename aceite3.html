@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | AURA OLIVA - Aceite de Oliva Premium</title>
+    <meta name="description" content="Descubre nuestro portfolio de aceites de oliva virgen extra premium de Jaén.">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  connect-src 'self';
+  media-src 'self';
+  object-src 'none';
+  frame-ancestors 'none'; 
+  base-uri 'self';
+  form-action 'self';
+">
+
+    <link rel="canonical">
+</head>
+<body>
+ <div class="aviso-tfc">
+  ⚠️ Esta página es un **trabajo fin de curso**. No es un sitio web real.
+</div>
+<header>
+  <div class="logodiv">
+    <a href="/aura-oliva/"><img class="logo" src="assets/imagenes/logo.png" alt="Aura Oliva"></a>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="/aura-oliva/">Inicio</a></li>
+      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">☰</button>
+  </nav>
+</header>
+<main>
+  <section class="hero-simple" data-animate>
+      <h1>Aura Oliva Ecológico</h1>
+      <p>Puro, equilibrado y sostenible. Un aceite de oliva virgen extra ecológico elaborado con respeto absoluto por la naturaleza y la tradición.</p>
+  </section> 
+  
+  
+  <section class="container portfolio-grid" data-animate>
+  
+        <article class="portfolio-item">
+          <img class="portfolio-img" src="assets/imagenes/garrafa2l.jpg" alt="Aura Oliva Ecológico">
+          <div class="portfolio-content">
+            <span class="categoria ecologico">Ecológico</span>
+            <h3>Aura Oliva Ecológico</h3>
+            <p>
+              <strong>Aura Oliva Ecológico</strong> es un aceite de oliva virgen extra certificado bajo los más estrictos estándares de agricultura ecológica. Nace de olivares cultivados sin pesticidas, herbicidas ni productos químicos, respetando el equilibrio natural del ecosistema y favoreciendo la biodiversidad del entorno.
+            </p>
+            <p>
+              Su proceso de extracción en frío garantiza la conservación íntegra de sus propiedades organolépticas. En nariz, ofrece aromas limpios y frescos con notas de <em>hierba, hoja de olivo y manzana verde</em>. En boca, presenta un sabor armónico y ligeramente afrutado, con un toque de amargor y picor equilibrados que reflejan su autenticidad.
+            </p>
+            <p>
+              Ideal para quienes buscan una alimentación <strong>natural, saludable y sostenible</strong>. Perfecto para utilizar en <strong>platos vegetarianos, cremas, ensaladas y cocina ecológica</strong>, aportando sabor y valor nutricional sin comprometer el medio ambiente.
+            </p>
+            <ul>
+              <li><strong>Variedad:</strong> Picual (cultivo ecológico)</li>
+              <li><strong>Certificación:</strong> Agricultura Ecológica (UE)</li>
+              <li><strong>Origen:</strong> Jaén, Andalucía (España)</li>
+              <li><strong>Extracción:</strong> En frío (≤22°C)</li>
+              <li><strong>Acidez:</strong> ≤ 0.2º</li>
+              <li><strong>Formato:</strong> Garrafa 2L / Botella 500ml</li>
+            </ul>
+            <a href="portfolio.html" class="btn-ver">Volver a Portfolio</a>
+          </div>
+        </article>
+
+    </section>
+
+<footer>
+  <p>&copy; 2025 AURA OLIVA. Todos los derechos reservados.</p>
+  <a href="aviso-legal.html">Aviso Legal</a> |
+  <a href="politica-privacidad.html">Política de Privacidad</a>
+</footer>
+
+<script>
+// Menú hamburguesa
+const hamburger = document.getElementById('hamburger');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+
+// Animaciones al scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('[data-animate]').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Servicios | AURA OLIVA</title>
+  <link rel="stylesheet" href="assets/css/estilos.css">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  connect-src 'self';
+  media-src 'self';
+  object-src 'none';
+  frame-ancestors 'none'; 
+  base-uri 'self';
+  form-action 'self';
+">
+
+  <link rel="canonical">
+</head>
+
+<body>
+ <div class="aviso-tfc">
+  ⚠️ Esta página es un **trabajo fin de curso**. No es un sitio web real.
+</div>
+<!-- HEADER -->
+<header>
+  <div class="logodiv">
+    <a href="/aura-oliva/"><img class="logo" src="assets/imagenes/logo.png" alt="Aura Oliva"></a>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="/aura-oliva/">Inicio</a></li>
+      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+      <li><a href="servicios.html" class="active">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">☰</button>
+  </nav>
+</header>
+
+<section class="hero-simple" data-animate>
+    <h1>Servicios</h1>
+    <p>Experiencias oleícolas, cultura gourmet y turismo de calidad.</p>
+</section>
+
+<!-- CONTENIDO -->
+<div class="container" data-animate>
+
+
+<div class="servicios-grid">
+
+  <!-- CATAS PRIVADAS -->
+  <div class="servicio">
+    <img src="assets/imagenes/cata-privada.jpg" alt="Catas privadas">
+    <div class="servicio-content">
+      <h3>Catas Privadas</h3>
+      <p>
+        Degustación sensorial en profundidad con análisis aromático, maridaje gourmet
+        y explicación guiada por expertos oleícolas.
+      </p>
+      <a href="contacto.html" class="btn-servicio">Solicitar reserva</a>
+    </div>
+  </div>
+
+  <!-- VISITAS GUIADAS -->
+  <div class="servicio">
+    <img src="assets/imagenes/visitas-guiadas.jpg" alt="Visitas Guiadas">
+    <div class="servicio-content">
+      <h3>Visitas Guiadas</h3>
+      <p>
+        Descubre el proceso completo del AOVE desde el olivo hasta la botella con paseo,
+        cata sensorial y detalle de bienvenida.
+      </p>
+      <a href="contacto.html" class="btn-servicio">Reservar visita</a>
+    </div>
+  </div>
+
+  <!-- EVENTOS -->
+  <div class="servicio">
+    <img src="assets/imagenes/eventos -gastronomicos.jpg" alt="Eventos gastronómicos">
+    <div class="servicio-content">
+      <h3>Eventos Gastronómicos</h3>
+      <p>
+        Organizamos showcookings, degustaciones premium y presentaciones en espacios exclusivos,
+        ideales para grupos selectos.
+      </p>
+      <a href="contacto.html" class="btn-servicio">Consultar fechas</a>
+    </div>
+  </div>
+
+  <!-- PUNTOS DE VENTA -->
+  <div class="servicio">
+    <img src="assets/imagenes/almazara-distribucion.jpg" alt="Distribución">
+    <div class="servicio-content">
+      <h3>Puntos de Venta</h3>
+      <p>
+        Disponemos de red nacional de tiendas, hoteles boutique y restauración de calidad
+        para distribución selectiva de AOVE.
+      </p>
+      <a href="contacto.html" class="btn-servicio">Solicitar listado</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA FINAL -->
+<div class="cta" data-animate>
+  <h2>¿Quieres una experiencia inolvidable?</h2>
+  <p>Cuéntanos qué buscas y diseñamos una propuesta a medida para ti.</p>
+  <a href="contacto.html">Contactar ahora</a>
+</div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 AURA OLIVA. Todos los derechos reservados.</p>
+  <div>
+    <a href="aviso-legal.html">Aviso Legal</a> |
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+
+// Animaciones scroll
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{
+  threshold:0.1,
+  rootMargin:"0px 0px -100px 0px"
+});
+
+document.querySelectorAll('[data-animate]').forEach(el=>{
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
